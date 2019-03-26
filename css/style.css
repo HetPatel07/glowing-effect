@@ -44,3 +44,53 @@
     color: #fff;
     position: relative;
 }
+
+/*text glowing effect*/
+.text {
+    position: relative;
+    height: 100%;
+    background-color: #111;
+}
+
+.text h1,
+p {
+    text-transform: capitalize;
+    font-size: 8em;
+    color: #fff;
+    font-weight: 100;
+    text-shadow: 0 0 10px rgba(255, 255, 255, .5),
+        0 0 20px rgba(255, 255, 255, .5),
+        0 0 40px rgba(255, 255, 255, .5),
+        0 0 80px rgba(255, 255, 255, .5);
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.text p {
+    line-height: 2;
+    font-size: 1.5em;
+    width: 50%;
+    margin: auto;
+    text-shadow: 0 0 5px rgba(255, 255, 255, .5),
+        0 0 10px rgba(255, 255, 255, .5),
+        0 0 20px rgba(255, 255, 255, .5),
+        0 0 40px rgba(255, 255, 255, .5);
+}
+
+.text::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: #73c2fb;
+    mix-blend-mode: overlay !important;
+    animation: animate 8s linear infinite;
+}
